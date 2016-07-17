@@ -6,18 +6,40 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Basics</a></li>
-    <li role="presentation"><a href="#wdev" aria-controls="wdev" role="tab" data-toggle="tab">Web Development</a></li>
+    <li role="presentation" class="active"><a href="#campaigns" aria-controls="campaigns" role="tab" data-toggle="tab">Campaigns</a></li>
+    <li role="presentation"><a href="#wdev" aria-controls="wdev" role="tab" data-toggle="tab">Localization</a></li>
     <li role="presentation"><a href="#data" aria-controls="data" role="tab" data-toggle="tab">Data Analysis</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane fade in active" id="basics">
-        {% for t in TOPIC_DICT ["Basics"] %}
-            <li><a href="{{t[1]}}">{{t[0]}}</a></li>
-        {% endfor %}</div>
-    <div role="tabpanel" class="tab-pane fade" id="wdev">Development for the web</div>
+    <div role="tabpanel" class="tab-pane fade in active" id="campaigns">
+      <div class="container">
+          <div class="row">
+                {% for t in TOPIC_DICT ["Campaigns"] %}
+                    <!-- Card Projects -->
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="img-responsive" src="{{ url_for('static', filename='Tugboat.jpg') }}">
+                                    <span class="card-title">{{t[0]}}</span>
+                                </div>
+
+                                <div class="card-content">
+                                    <p>{{t[2]}}</p>
+                                </div>
+
+                                <div class="card-action">
+                                    <a href="{{t[1]}}">View Campaign</a>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+          </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="wdev">Localize assets</div>
     <div role="tabpanel" class="tab-pane fade" id="data">Worthwhile data analysis</div>
   </div>
 
