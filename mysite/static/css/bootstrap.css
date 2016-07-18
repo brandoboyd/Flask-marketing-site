@@ -12,6 +12,87 @@ html {
 body {
   margin: 0;
 }
+
+/*! Creates a scalable, full-width bg image on home page */
+
+.wide {
+  width:100%;
+  height:calc(100% - 1px);
+  background-image:url('https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&w=1920&h=1080&fm=png');
+  background-size:cover;
+}
+
+.wide img {
+  width:100%;
+}
+
+.card {
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+.card span.card-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card .card-image {
+  position: relative;
+  overflow: hidden;
+}
+.card .card-image img {
+  border-radius: 2px 2px 0 0;
+  background-clip: padding-box;
+  position: relative;
+  z-index: -1;
+}
+.card .card-image span.card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+}
+.card .card-content {
+  padding: 16px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.card .card-content p {
+  margin: 0;
+  color: inherit;
+}
+.card .card-content span.card-title {
+  line-height: 48px;
+}
+.card .card-action {
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 16px;
+}
+.card .card-action a {
+  color: #F44336;
+  margin-right: 16px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+.card .card-action a:hover {
+  color: #ffd8a6;
+  text-decoration: none;
+}
+
+.reverse {
+  color: #fff;
+  text-decoration: none;
+}
+
+
 article,
 aside,
 details,
@@ -4959,11 +5040,10 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px, 30px, 30px, 30px;
   margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+  margin-left: 30px;
+  color: #fff;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4979,9 +5059,9 @@ a.badge:focus {
 }
 .container .jumbotron,
 .container-fluid .jumbotron {
-  padding-right: 15px;
-  padding-left: 15px;
-  border-radius: 6px;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  border-radius: 6px !important;
 }
 .jumbotron .container {
   max-width: 100%;
@@ -4989,7 +5069,7 @@ a.badge:focus {
 @media screen and (min-width: 768px) {
   .jumbotron {
     padding-top: 48px;
-    padding-bottom: 48px;
+    padding-bottom: 200px;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
